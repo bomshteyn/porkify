@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('getSongs', \App\Http\Controllers\GetSongsController::class);
+
+Route::middleware('auth:sanctum')
+     ->group(function () {
+         Route::post('addSong', \App\Http\Controllers\AddSongController::class);
+         Route::post('uploadMedia', \App\Http\Controllers\UploadController::class);
+     });
+

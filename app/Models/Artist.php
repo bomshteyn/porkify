@@ -5,7 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class album extends Model
+class Artist extends Model
 {
     use HasFactory;
+
+    protected $guarded = ["id"];
+
+    public function songs()
+    {
+        return $this->hasMany(Song::class);
+    }
 }
