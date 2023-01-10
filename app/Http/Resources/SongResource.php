@@ -30,8 +30,7 @@ class SongResource extends JsonResource
                 'name' => $this->media->file_name,
                 'url' => Storage::disk($this->media->disk)->url($this->media->path),
                 'type' => $this->media->mime_type,
-                'size' => $this->media->size,
-                'duration' => $this->media->duration,
+                'size' => $this->media->size
             ];
         }
 
